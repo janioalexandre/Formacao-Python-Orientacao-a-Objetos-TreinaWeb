@@ -4,32 +4,43 @@ class Veiculo():
         self.__cor = cor
         self.__tipo_combustivel = tipo_combustivel
         self.__potencia = potencia
-        self.__qtd_combustivel = 0
+        self._qtd_combustivel = 0
         self.__is_ligado = 0
         self.__velocidade = 0
+        self._libras = 0
 
     def __del__(self):
         print('O objeto foi removido da memória. :)')
 
+    def pintar(self, cor):
+        """O método pintar recebe uma string cor e atribui ao atributo cor do objeto carro"""
+        self.__cor = cor
+        print(f'A cor do veiculo foi alterada para {self.__cor}')
+
+    @property
+    def cor(self):
+        """O método cor retorna a cor do objeto carro"""
+        return self.__cor
+
     def abastecer(self, qtd_combustivel):
         """O método abastecer recebe como parêmetro a quantidade de combustível e incrementa no atributo qtd_combustivel do objeto carro"""
-        self.qtd_combustivel += qtd_combustivel
+        self.__qtd_combustivel += qtd_combustivel
     
     def ligar (self):
-        if self.is_ligado:
+        if self.__is_ligado:
             print('O veiculo já está ligado')
         else:
-            self.is_ligado = True
+            self.__is_ligado = True
             print('O veiculo foi ligado')
             
     def desligado(self):
-        if self.is_ligado == False:
+        if self.__is_ligado == False:
             print('O veiculo já está desligado')
         else:
-            self.is_ligado = False
+            self.__is_ligado = False
 
     def acelerar(self, velocidade=10):
-        if self.is_ligado:
-            self.velocidade += velocidade
+        if self.__is_ligado:
+            self.__velocidade += velocidade
         else:
             print('O veiculo precisa estar ligado para acelerar')
