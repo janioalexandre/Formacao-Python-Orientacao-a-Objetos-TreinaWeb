@@ -8,7 +8,7 @@ class Moto(veiculo.Veiculo):
 
     def abastecer(self, qtd_combustivel):
         print("O método foi chamado a partir da classe Moto")
-        if self.__qtd_combustivel >= 30:
+        if self._qtd_combustivel >= 30:
             print("A moto está cheia")
         else:
-            self.__qtd_combustivel += qtd_combustivel
+            self._qtd_combustivel += qtd_combustivel
