@@ -1,6 +1,6 @@
 import abc
 
-class Veiculo():
+class Veiculo(abc.ABC):
     """Essa é a classe carro, Essa classe é utilizada para instanciar novos carros em nosso programa"""
     def __init__(self, cor, tipo_combustivel, potencia):
         self._cor = cor
@@ -14,7 +14,6 @@ class Veiculo():
     def __del__(self):
         print('O objeto foi removido da memória. :)')
 
-    @abc.abstractmethod
     def pintar(self, cor):
         """O método pintar recebe uma string cor e atribui ao atributo cor do objeto carro"""
         self._cor = cor
