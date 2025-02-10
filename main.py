@@ -1,14 +1,16 @@
-import carro
+import carro, moto
 
-prisma_vermelho = carro.Carro('vermelho', 4, 'flex', 1.0)
+prisma_vermelho = carro.Carro('vermelho', 'flex', 1.0, 4)
 prisma_vermelho.ligar()
 help(prisma_vermelho.abastecer)
 # help(carro.Carro)
+prisma_vermelho.abastecer(50)
 prisma_vermelho.abastecer(10)
+print(prisma_vermelho.velocidade)
 print(f"A quantidade de combustível do carro é: {prisma_vermelho.qtd_combustivel}")
-del prisma_vermelho
 
-onix_preto = carro.Carro('preto', 4, 'flex', 1.0)
-onix_preto.ligar()
-onix_preto.acelerar()
-print(f"A velocidade do carro é: {onix_preto.velocidade}")
+moto_vermelha = moto.Moto('vermelho', 'gasolina', 1.0, 2)
+moto_vermelha.ligar()
+moto_vermelha.abastecer(30)
+moto_vermelha.abastecer(10)
+print(moto_vermelha.is_ligado)
